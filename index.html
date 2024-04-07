@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body >
+        <header class="p-4 text-center border-bottom border-5 border-info bg-primary text-light w-100">
+            <h1 class="display-1"> Weather API</h1>
+        </header>
+
+        <main class="d-flex flex-wrap">
+
+            <section id="Search-Bar" class="d-flex flex-column w-25 border-bottom border-dark border-5">
+                <label class=" w-75 mx-5 my-4 text-center" for="city-search">Search For A city </label>
+                <input class=" w-75 mx-5 text-center" type="text"  id="city-search" placeholder="Washington" >
+                <button class="w-75 mx-5" type="submit" id="submitButton">Search</button>
+            </section>
+            
+            
+            <section id="Main-display" class="d-flex flex-column w-75 justify-content-center border-start border-bottom border-dark border-5">
+                <h2 class="mx-5"> The City:(date=Today) </h2>
+                <p class="mx-5">Temp: </p>
+                <p class="mx-5">Wind: </p>
+                <p class="mx-5">Humidity: </p>
+            </section>
+            
+            
+            <section id="search-history" class="d-flex flex-column w-25 border-5 border-end border-dark">
+                <h2 class="card-header"> Past Results: </h2>
+                <button  class="align-self-start w-75 my-2 mx-5" type="button"> Past Searched City </button>
+            </section >
+            
+            
+            <section id="upcoming-Forcast" class="d-flex row w-75  justify-content-center " >
+                <h2 class="w-100 header"> Upcoming next 5 days:</h2>
+
+                <div id="day-1" class="upcoming-weather-days mx-3 my-3 w-25 border border-dark ">
+                    <p> Date</p>
+                    <p> cloud image</p>
+                    <p> Temp</p>
+                    <p> Wind</p>
+                    <p> Humidity</p>
+                </div>
+
+                <div id="day-2" class="upcoming-weather-days mx-3 my-3 w-25 border border-dark ">
+                    <p> Date</p>
+                    <p> cloud image</p>
+                    <p> Temp</p>
+                    <p> Wind</p>
+                    <p> Humidity</p>
+                </div>
+
+                <div id="day-3" class="upcoming-weather-days mx-3 my-3 w-25 border border-dark ">
+                    <p> Date</p>
+                    <p> cloud image</p>
+                    <p> Temp</p>
+                    <p> Wind</p>
+                    <p> Humidity</p>
+                </div>
+
+                <div id="day-4" class="upcoming-weather-days mx-3 my-3 w-25 border border-dark ">
+                    <p> Date</p>
+                    <p> cloud image</p>
+                    <p> Temp</p>
+                    <p> Wind</p>
+                    <p> Humidity</p>
+                </div>
+
+                <div id="day-5" class="upcoming-weather-days mx-3 my-3 w-25 border border-dark ">
+                    <p> Date</p>
+                    <p> cloud image</p>
+                    <p> Temp</p>
+                    <p> Wind</p>
+                    <p> Humidity</p>
+                </div>
+            </section>
+
+        </main>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+        <script src="java.js"></script>
+    </body>
+
+</html>
