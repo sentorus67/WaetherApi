@@ -25,10 +25,10 @@
             
             
             <section id="Main-display" class="d-flex flex-column w-75 justify-content-center border-start border-bottom border-dark border-5">
-                <h2 class="mx-5"> The City:(date=Today) </h2>
-                <p class="mx-5">Temp: </p>
-                <p class="mx-5">Wind: </p>
-                <p class="mx-5">Humidity: </p>
+                <h2 id='today-city'class="mx-5"> The City:(Today) </h2>
+                <p id='today-temp' class="mx-5">Temp: </p>
+                <p id='today-wind' class="mx-5">Wind: </p>
+                <p id="today-humidity" class="mx-5">Humidity: </p>
             </section>
             
             
@@ -83,7 +83,8 @@
             </section>
 
         </main>
-        
+
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" ></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
         <script src="java.js"></script>
