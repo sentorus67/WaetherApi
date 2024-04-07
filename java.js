@@ -26,11 +26,13 @@ else
  }
 }
 
+
+
 function weatherReport(cityname){
     errorFlag=false;
     // city=(possibleCity.value);
     
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityname}&cnt=6&appid=${APIkey}`)
 
     .then(function (response) {
 
@@ -43,19 +45,31 @@ function weatherReport(cityname){
     })
 
     .then(function (data) {
-        addToSearchHistory(data.name);
-        $('#today-city').text(`${data.name} (${today})`);
-        $('#today-temp').text(`Temp: ${data.main.temp} degrees Farenheight`);
-        $('#today-wind').text(`Wind: ${data.wind.deg} at ${data.wind.speed} MPH`);
-        $('#today-humidity').text(`Humidty: ${data.main.humidity}`);
+        const weatherToday=data.list[0];
+        addToSearchHistory(data.city.name);
+        console.log(weatherToday);
+        $('#today-city').text(`${data.city.name} (${today})`);
+        $('#today-temp').text(`Temp: ${weatherToday.main.temp} degrees Farenheight`);
+        $('#today-wind').text(`Wind: ${weatherToday.wind.deg} at ${weatherToday.wind.speed} MPH`);
+        $('#today-humidity').text(`Humidty: ${weatherToday.main.humidity}`);
+
+        for (let index = 1; index < 6; index++) {
+            const nextDay=upcomingWeather.children[index];
+            const nextForcast= data.list[index];
+            nextDay.children[0].textContent=`On ${dayjs().add(index,'day').format('DD/MM/YYYY')}`;
+            nextDay.children[1].textContent=`Overhead will be ${nextForcast.weather[0].description}`;
+            nextDay.children[2].textContent=`Average temp of ${nextForcast.main.temp} degrees farenheight`;
+            nextDay.children[3].textContent=`Wind speeds of ${nextForcast.wind.speed} at ${nextForcast.wind.deg} degrees`;
+            nextDay.children[4].textContent=`Humidity of ${nextForcast.main.humidity}`;
+        }
         
      });
 
-     for (let index = 1; index < 6; index++) {
-        console.log(upcomingWeather.children[index]);
-        
-     }
+ 
+
+   
 }
+
 
 searchButton.addEventListener('click',function(){weatherReport(possibleCity.value)});
 
