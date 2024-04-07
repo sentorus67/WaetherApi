@@ -51,7 +51,7 @@ function weatherReport(cityname){
         $('#today-city').text(`${data.city.name} (${today})`);
         $('#today-temp').text(`Temp: ${weatherToday.main.temp} degrees Farenheight`);
         $('#today-wind').text(`Wind: ${weatherToday.wind.deg} at ${weatherToday.wind.speed} MPH`);
-        $('#today-humidity').text(`Humidty: ${weatherToday.main.humidity}`);
+        $('#today-humidity').text(`Humidty: ${weatherToday.main.humidity}%`);
 
         for (let index = 1; index < 6; index++) {
             const nextDay=upcomingWeather.children[index];
@@ -60,7 +60,7 @@ function weatherReport(cityname){
             nextDay.children[1].textContent=`Overhead will be ${nextForcast.weather[0].description}`;
             nextDay.children[2].textContent=`Average temp of ${nextForcast.main.temp} degrees farenheight`;
             nextDay.children[3].textContent=`Wind speeds of ${nextForcast.wind.speed} at ${nextForcast.wind.deg} degrees`;
-            nextDay.children[4].textContent=`Humidity of ${nextForcast.main.humidity}`;
+            nextDay.children[4].textContent=`Humidity of ${nextForcast.main.humidity}%`;
         }
         
      });
