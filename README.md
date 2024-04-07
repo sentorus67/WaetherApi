@@ -5,3 +5,6 @@
     When a city is searched it is placed in an array that can be used to quickly re observe the forecast information. 
     It also prsents information for the upcoming 5 days.
  -->
+ 
+ https://sentorus67.github.io/WaetherApi/ 
+ 
